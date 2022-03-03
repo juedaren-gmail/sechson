@@ -1,0 +1,220 @@
+<!--
+MIT No Attribution
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify,
+merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+v.1.0 - James Beswick (@jbesw) - contact me with any questions!
+-->
+
+<!doctype html>
+<!-- Template from https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    @media only screen and (min-width: 600px) {
+      .card {
+        flex-direction: unset;
+      }
+    }
+    </style>
+
+  </head>
+  <body>
+    <div class="app-example container">
+      <div class="row">
+        <div class="card border-bootstrap box-shadow mb-4">
+          <div class="card-header text-bootstrap d-flex justify-content-between">
+            <div>
+              <h1><strong style="color:#087cff">FIX API</strong> Survey Questionnaire</h1>
+              <hr>
+              <strong style="color:#087cff">FIX-based MAM: </strong>6 Liquidity Providers Supported<br>
+              <small class="text-muted">If individuals want to trade via FIX accounts, liquidity providers set higher thresholds on initial funds and monthly trading volume.</small><br>
+              <small class="text-muted">But in reality, there is a way to make it accessible to traders with lower initial capital. That can be implemented by the shared FIX session.</small><br>
+              <small class="text-muted">Through the MAM account, several traders jointly undertake the initial capital pool and trading volume required by the liquidity provider.</small><br>
+              <small class="text-muted">In this way, the initial capital can be less than 2,000, or even less than 1,000.</small><br>
+              <small class="text-muted">Tell us about your maximum acceptable initial funding for each FIX-based MAM account.</small><br>
+              <small class="text-muted">We will reserve a place for you to open a FIX MAM account and keep you notified once your needs are matched.</small>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <form method="POST">
+              <div class="form-group">
+                <label for="email">Email address (Required)</label>
+                <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. We will reserve a place for you to open a FIX MAM account and keep you notified once your needs are matched.</small>
+              </div>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">LMAX</legend>
+                <small id="lp1Help" class="form-text text-muted">Likely to trade via LMAX?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp1" id="lp1Yes" value="Yes">
+                  <label class="form-check-label" for="lp1Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp1" id="lp1No" value="No">
+                  <label class="form-check-label" for="lp1No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp1Val" name="lp1Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">Interactive Brokers</legend>
+                <small id="lp2Help" class="form-text text-muted">Likely to trade via Interactive Brokers?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp2" id="lp2Yes" value="Yes">
+                  <label class="form-check-label" for="lp1Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp2" id="lp2No" value="No">
+                  <label class="form-check-label" for="lp1No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp2Val" name="lp2Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">Swissquote</legend>
+                <small id="lp3Help" class="form-text text-muted">Likely to trade via Swissquote?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp3" id="lp3Yes" value="Yes">
+                  <label class="form-check-label" for="lp3Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp3" id="lp3No" value="No">
+                  <label class="form-check-label" for="lp3No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp3Val" name="lp3Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">ATC Brokers</legend>
+                <small id="lp4Help" class="form-text text-muted">Likely to trade via ATC Brokers?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp4" id="lp4Yes" value="Yes">
+                  <label class="form-check-label" for="lp4Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp4" id="lp4No" value="No">
+                  <label class="form-check-label" for="lp4No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp4Val" name="lp4Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">LegacyFX</legend>
+                <small id="lp5Help" class="form-text text-muted">Likely to trade via LegacyFX?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp5" id="lp5Yes" value="Yes">
+                  <label class="form-check-label" for="lp5Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp5" id="lp5No" value="No">
+                  <label class="form-check-label" for="lp5No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp5Val" name="lp5Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <fieldset class="mb-3">
+                <legend class="col-form-label pt-0">Varianse</legend>
+                <small id="lp6Help" class="form-text text-muted">Likely to trade via Varianse?</small>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp6" id="lp6Yes" value="Yes">
+                  <label class="form-check-label" for="lp6Yes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="lp6" id="lp6No" value="No">
+                  <label class="form-check-label" for="lp6No">No</label>
+                </div>
+                <input type="number" class="form-control" id="lp6Val" name="lp6Val" placeholder="Maximum Acceptable Initial Funding">
+              </fieldset>
+
+              <h4 id="response"></h4>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script defer>
+      $( document ).ready(() => {
+        var hash = window.location.hash.substr(1);
+
+        var result = hash.split('&').reduce(function (res, item) {
+            var parts = item.split('=');
+            res[parts[0]] = parts[1];
+            return res;
+        }, {});
+
+        const form = document.querySelector('form');
+        const submitResponse = document.querySelector('#response');
+        const formURL = ' https://p2rk7y0qf9.execute-api.eu-central-1.amazonaws.com/Prod/submitForm';
+
+        $(document).on("wheel", "input[type=number]", function (e) {
+            $(this).blur();
+        });
+
+        form.onsubmit = e => {
+          e.preventDefault();
+
+          // Capture the form data
+          let data = {};
+          // Array.from(form).map(input => (data[input.name] = input.value));
+          for (const entry of new FormData(form)) {
+            data[entry[0]] = entry[1];
+          };
+          for(var i in result) {
+            data[i] = result[i];
+          }
+          console.log('Sending: ', JSON.stringify(data));
+          submitResponse.innerHTML = 'Sending...'
+
+          // Create the AJAX request
+          var xhr = new XMLHttpRequest();
+          xhr.open(form.method, formURL, true);
+          xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+          // Send the collected data as JSON
+          xhr.send(JSON.stringify(data));
+
+          xhr.onloadend = response => {
+            if (response.target.status === 200) {
+              form.reset();
+              submitResponse.innerHTML = 'Successfully submitted! Thank you! We will keep you posted once your needs are matched.';
+            } else {
+              submitResponse.innerHTML = 'Error! Please try again.';
+              console.error(JSON.parse(response));
+            }
+          };
+        };
+      });
+    </script>
+
+  </body>
+</html>
